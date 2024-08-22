@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "utils.h": "c",
+        "lista.h": "c",
+        "12_desenhaarvore.h": "c",
+        "4_buscarinfo.h": "c",
+        "1_criararvore.h": "c",
+        "16_destroylistinfo.h": "c",
+        "0_strucdesc.h": "c",
+        "stdio.h": "c"
+    }
+}

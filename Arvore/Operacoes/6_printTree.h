@@ -4,7 +4,6 @@
 
 void printTrieRecursive(pNohTrie raiz, pDLista alfabeto, FuncaoImpressao fi)
 {
-
   if (raiz == NULL)
   {
     printf(" * - ");

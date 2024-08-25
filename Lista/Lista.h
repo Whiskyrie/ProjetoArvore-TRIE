@@ -37,3 +37,5 @@
 #include "Operacoes/17_reverseList.h"
 
 #include "Operacoes/18_createListSize.h"
+
+#include "Operacoes/19_getListSize.h"

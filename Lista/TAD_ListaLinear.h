@@ -56,4 +56,6 @@ void *searchInfoPosition(pDLista lista, int pos);
 
 pDLista createListSize(int tam);
 
+int getListSize(pDLista lista);
+
 #endif

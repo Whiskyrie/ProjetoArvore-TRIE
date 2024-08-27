@@ -83,7 +83,7 @@ int compareChar(void *info1, void *info2)
 {
    char *c1 = (char *)info1;
    char *c2 = (char *)info2;
-   return *c2 - *c1;
+   return *c1 - *c2;
 }
 /* ---------------------------------------- */
 void *sliceString(void *info, int pos)

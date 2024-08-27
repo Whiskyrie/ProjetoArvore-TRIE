@@ -58,4 +58,6 @@ pDLista createListSize(int tam);
 
 int getListSize(pDLista lista);
 
+int removeListInfo(pDLista lista, pNoh noRemover);
+
 #endif

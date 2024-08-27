@@ -4,15 +4,12 @@
 /* ----------------------------------------------------------*/
 pNohTrie searchInfoTrieRecursive(pNohTrie raiz, pDLista alfabeto, void *chave, int k, int *L, int *C, FuncaoComparacao pfc, FuncaoFatiamento pff)
 {
-    printf("--> Buscando Chave = %s - k = %d - L = %d \n ", (char *)chave, k, *L);
 
     if (*L < k)
     {
         // determina a posi��o j do d�gito da chave (d) dentro do alfabeto
         void *d = pff(chave, *L);
         int characterIndex = containsInfo(alfabeto, d, pfc);
-        printf("--> Simbolo = %c - characterIndex = %d \n", *((char *)d), characterIndex);
-
         pNohTrie filho = searchInfoPosition(raiz->filhos, characterIndex);
         if (filho != NULL)
         {

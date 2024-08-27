@@ -39,3 +39,5 @@
 #include "Operacoes/18_createListSize.h"
 
 #include "Operacoes/19_getListSize.h"
+
+#include "Operacoes/20_removeListInfo.h"

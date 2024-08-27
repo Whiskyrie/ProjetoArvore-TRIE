@@ -1,3 +1,6 @@
+#ifndef GET_LIST_SIZE_H
+#define GET_LIST_SIZE_H
+
 int getListSize(pDLista lista)
 {
     if (lista == NULL)
@@ -6,3 +9,4 @@ int getListSize(pDLista lista)
     }
     return lista->quantidade;
 }
+#endif

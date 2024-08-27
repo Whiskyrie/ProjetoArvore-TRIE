@@ -9,7 +9,8 @@
     "0_strucdesc.h": "c",
     "stdio.h": "c",
     "trie.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "20_removelistinfo.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

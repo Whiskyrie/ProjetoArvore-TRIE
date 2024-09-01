@@ -57,5 +57,13 @@ int main()
     testSearch(trie, "bac");
     testSearch(trie, "casa");
 
+    printf("\n\n --- Testes de remoção --- \n\n");
+    printf("Removendo 'bacia': %s\n", removeInfoTrie(trie, "bacia", strlen("bacia"), compareChar, sliceString) ? "Sucesso" : "Falha");
+    testSearch(trie, "bacia");
+    printf("Removendo 'b': %s\n", removeInfoTrie(trie, "b", strlen("b"), compareChar, sliceString) ? "Sucesso" : "Falha");
+    testSearch(trie, "b");
+    testSearch(trie, "bac");
+    printf("Removendo 'casa': %s\n", removeInfoTrie(trie, "casa", strlen("casa"), compareChar, sliceString) ? "Sucesso" : "Falha");
+
     return 0;
 }

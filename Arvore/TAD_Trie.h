@@ -24,7 +24,7 @@ pDTrie createTreeTrie(char alfabeto[], int ordem); // alfabeto e seu tamanho
 
 int addInfoTrie(pDTrie arvore, void *chave, int k, FuncaoComparacaoAlfabeto pfc, FuncaoFatiamento pff);
 
-bool removeInfoTrie(pDTrie arvore, void *chave, FuncaoComparacao fc, FuncaoFatiamento ff);
+int removeInfoTrie(pDTrie arvore, void *chave, int k, FuncaoComparacao pfc, FuncaoFatiamento pff);
 
 pNohTrie searchInfoTrie(pDTrie arvore, void *chave, int k, int *L, int *C, FuncaoComparacao pfc, FuncaoFatiamento pff);
 

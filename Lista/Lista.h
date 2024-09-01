@@ -41,3 +41,7 @@
 #include "Operacoes/19_getListSize.h"
 
 #include "Operacoes/20_removeListInfo.h"
+
+#include "Operacoes/21_isListEmpity.h"
+
+#include "Operacoes/22_getDataList.h"

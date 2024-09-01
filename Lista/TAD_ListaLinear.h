@@ -60,4 +60,8 @@ int getListSize(pDLista lista);
 
 int removeListInfo(pDLista lista, pNoh noRemover);
 
+int isListEmpity(pDLista lista);
+
+void *getListData(DLista *lista, int posicao);
+
 #endif

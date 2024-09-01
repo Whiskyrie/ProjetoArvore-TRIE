@@ -5,40 +5,34 @@
 pNohTrie addInfoTrieRecursive(pNohTrie raiz, pDLista alfabeto, void *chave, int k, int ordem, int *L, FuncaoComparacao pfc, FuncaoFatiamento pff)
 {
    if (*L >= k)
+   {
+      raiz->terminal = 1; // Marca o nó como terminal
       return raiz;
-
-   // a raiz aponta para o n� que deve receber os pr�ximos k - L s�mbolos da chave
-   pNohTrie novo;
-   if (*L == k)
-   {
-      novo = createNohTrie(1, ordem); // novo n� � terminal
-   }
-   else
-   {
-      novo = createNohTrie(0, ordem); // novo n� � terminal
    }
 
-   // determina a posi��o j do d�gito da chave (d) dentro do alfabeto
+   // determina a posição j do dígito da chave (d) dentro do alfabeto
    void *d = pff(chave, *L);
    int characterIndex = containsInfo(alfabeto, d, pfc);
+   free(d); // Libera a memória alocada por pff
 
-   // coloca o novo filho no lugar do anterior (que era NULL)
-   removeInfoPos(raiz->filhos, characterIndex);
-   addInfoInMiddle(raiz->filhos, novo, characterIndex);
+   pNohTrie filho = searchInfoPosition(raiz->filhos, characterIndex);
+
+   if (filho == NULL)
+   {
+      filho = createNohTrie(0, ordem); // Cria um novo nó não-terminal
+      removeInfoPos(raiz->filhos, characterIndex);
+      addInfoInMiddle(raiz->filhos, filho, characterIndex);
+   }
 
    // prepara chamada recursiva
    (*L)++;
-   pNohTrie novoFilho = addInfoTrieRecursive(novo, alfabeto, chave, k, ordem, L, pfc, pff);
-   return novoFilho;
+   return addInfoTrieRecursive(filho, alfabeto, chave, k, ordem, L, pfc, pff);
 }
 
-/* ----------------------------------------------------------*/
 int addInfoTrie(pDTrie arvore, void *chave, int k, FuncaoComparacaoAlfabeto pfc, FuncaoFatiamento pff)
 {
-
    int L = 0, C = 0;
 
-   // printf("\n Incluindo chave %s", chave);
    pNohTrie noh = searchInfoTrie(arvore, chave, k, &L, &C, pfc, pff);
 
    if (C == 1)
@@ -47,7 +41,7 @@ int addInfoTrie(pDTrie arvore, void *chave, int k, FuncaoComparacaoAlfabeto pfc,
       return 0;
    }
 
-   // apás a busca, a variável L representa o último dígito analisado da chave (prefixo)
+   // após a busca, a variável L representa o último dígito analisado da chave (prefixo)
    addInfoTrieRecursive(noh, arvore->alfabeto, chave, k, arvore->ordem, &L, pfc, pff);
    return 1;
 }
